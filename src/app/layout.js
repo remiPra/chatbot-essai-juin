@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
         <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet" />
-      </Head>
+      </Head>     
       <body suppressHydrationWarning={true} >{children}</body>
     </html>
   )
