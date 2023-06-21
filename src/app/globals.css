@@ -18,3 +18,8 @@
 .opacity-6 {
   opacity: 0.6;
 }
+
+.Accent {color:  #e03c32}
+.Dark {color: #303231}
+.Light {color: #c2b396}
+.bg-Light {background-color: #c2b396}

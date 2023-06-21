@@ -38,12 +38,12 @@ function Page() {
     setIsLoading(true);
 
     console.log(questionInput);
-
+let openai = null
     if (typeof window !== 'undefined') {
       const configuration = new Configuration({
-        apiKey: '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'
+        apiKey: process.env.NEXT_PUBLIC_DEMO_VARIABLE
       });
-      const openai = new OpenAIApi(configuration);
+      openai = new OpenAIApi(configuration);
       console.log(openai);
     }
 
@@ -124,12 +124,15 @@ function Page() {
         <>
           {screen === 0 && (
             <div className="flex min-h-screen flex-col items-center justify-between">
-              Bienvenue sur le chatbot
+              <h1>le chatbot est basé sur des infos pratiques</h1>
+
             </div>
           )}
           {screen === 1 && (
             <div className="flex min-h-screen flex-col items-center justify-between">
-              Vous pouvez poser des questions
+              <h2>
+                Vous pouvez poser les questions que vous voulez , gardez a l'esprit que nous sommes au balbutiement de cette ia
+                </h2>
             </div>
           )}
           {screen === 2 && (
