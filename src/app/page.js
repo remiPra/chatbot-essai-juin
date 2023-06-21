@@ -13,7 +13,7 @@ export default function Home() {
   
   <div className="mt-6">
     <div>
-      <Link href="/chatgpt3">
+      <Link href="/chatgpt4">
         <button style={{ backgroundColor: '#e03c32', color: '#ffffff' }} className="px-4 py-2 rounded hover:bg-opacity-80 transition duration-300">
           Cliquez ici
         </button>

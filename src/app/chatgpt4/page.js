@@ -3,6 +3,7 @@ import { Configuration, OpenAIApi } from 'openai';
 import { collection, getDocs } from 'firebase/firestore';
 import db from '../firebase';
 import React, { useState, useEffect } from 'react';
+import axios from 'axios'
 
 function Page() {
   const [screen, setScreen] = useState(0);
@@ -79,11 +80,18 @@ let openai = null
     setIsFetchingResponse(true);
 
     if (typeof window !== 'undefined') {
-      const response = await openai.createChatCompletion({
+      const response = await axios.post(
+        'https://api.openai.com/v1/chat/completions',{
         model: 'gpt-3.5-turbo',
         messages: messages,
         max_tokens: 2000
-      });
+  },{
+        headers: {
+          Authorization: `Bearer ${process.env.NEXT_PUBLIC_DEMO_VARIABLE}`,
+          'Content-Type': 'application/json',
+        },
+      })
+      
 
       setIsFetchingResponse(false);
 
